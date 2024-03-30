@@ -1,0 +1,1863 @@
+{
+	"info": {
+		"_postman_id": "3afa0490-29fa-42cd-a434-dc1a0596fe3d",
+		"name": "SkyBook",
+		"description": "This is an API documentation for a mini project Named \"SkyBook\".\n\nSkyBook is an application for flight reservation. The flight menu provided by this app is as follows:\n\n- Jakarta to London\n    \n- London to Jakarta\n    \n- Jakarta to Tokyo\n    \n- Tokyo to Jakarta\n    \n- Jakarta to Los Angeles\n    \n- Los Angeles to Jakarta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32625526"
+	},
+	"item": [
+		{
+			"name": "Flights",
+			"item": [
+				{
+					"name": "POST Flight",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTa3lCb29rIEFwcHMiLCJzdWIiOiJ1c2VyX3Eya0pKVk1SR0duYmc4RUE1eGpBOCIsImV4cCI6MTcxMTczMjYyNiwiaWF0IjoxNzExNzI5MDI2LCJyb2xlIjoiUk9MRV9BRE1JTiJ9.9G1gL_lvonskhJ-qAYVDVoeSkGHGHiiic5w0YVBzN04",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"origin\":\"Jakarta\",\n    \"destination\":\"London\",\n    \"totalSeats\": 100,\n    \"availableSeats\":100,\n    \"price\": 2500000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/flights",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"flights"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST Flight",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"origin\":\"Jakarta\",\n    \"destination\":\"Tokyo\",\n    \"totalSeats\": 100,\n    \"availableSeats\":100,\n    \"price\": 2000000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/flights",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"flights"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Mar 2024 09:51:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"flight_Phtd4Ue38X35IZnEPDs1C\",\n    \"origin\": \"Jakarta\",\n    \"destination\": \"Tokyo\",\n    \"departureTime\": \"2024-03-30 15:00\",\n    \"arrivalTime\": \"2024-03-31 00:25\",\n    \"totalSeats\": 100,\n    \"availableSeats\": 100,\n    \"price\": 2000000\n}"
+						}
+					]
+				},
+				{
+					"name": "GET All Flights",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTa3lCb29rIEFwcHMiLCJzdWIiOiJ1c2VyX3Eya0pKVk1SR0duYmc4RUE1eGpBOCIsImV4cCI6MTcxMTczMjYyNiwiaWF0IjoxNzExNzI5MDI2LCJyb2xlIjoiUk9MRV9BRE1JTiJ9.9G1gL_lvonskhJ-qAYVDVoeSkGHGHiiic5w0YVBzN04",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/flights",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"flights"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET All Flights",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/flights",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"flights"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Mar 2024 09:53:20 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"flight_Phtd4Ue38X35IZnEPDs1C\",\n        \"origin\": \"Jakarta\",\n        \"destination\": \"Tokyo\",\n        \"departureTime\": \"2024-03-30 15:00\",\n        \"arrivalTime\": \"2024-03-31 00:25\",\n        \"totalSeats\": 100,\n        \"availableSeats\": 100,\n        \"price\": 2000000\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "GET Flight by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTa3lCb29rIEFwcHMiLCJzdWIiOiJ1c2VyX3Eya0pKVk1SR0duYmc4RUE1eGpBOCIsImV4cCI6MTcxMTczMjYyNiwiaWF0IjoxNzExNzI5MDI2LCJyb2xlIjoiUk9MRV9BRE1JTiJ9.9G1gL_lvonskhJ-qAYVDVoeSkGHGHiiic5w0YVBzN04",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/flights/flight_3euwQv5sOqHrS1_AzlxKJ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"flights",
+								"flight_3euwQv5sOqHrS1_AzlxKJ"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET Flight by Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/flights/flight_3euwQv5sOqHrS1_AzlxKJ",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"flights",
+										"flight_3euwQv5sOqHrS1_AzlxKJ"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Mar 2024 16:17:48 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"flight_3euwQv5sOqHrS1_AzlxKJ\",\n    \"origin\": \"Jakarta\",\n    \"destination\": \"Tokyo\",\n    \"departureTime\": \"2024-03-30 21:00\",\n    \"arrivalTime\": \"2024-03-31 06:25\",\n    \"totalSeats\": 100,\n    \"availableSeats\": 97,\n    \"price\": 2000000\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE Flight by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTa3lCb29rIEFwcHMiLCJzdWIiOiJ1c2VyX3Eya0pKVk1SR0duYmc4RUE1eGpBOCIsImV4cCI6MTcxMTczMjYyNiwiaWF0IjoxNzExNzI5MDI2LCJyb2xlIjoiUk9MRV9BRE1JTiJ9.9G1gL_lvonskhJ-qAYVDVoeSkGHGHiiic5w0YVBzN04",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/flights/delete/flight_iuK3ROKr9BRI30WXJwMEz",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"flights",
+								"delete",
+								"flight_iuK3ROKr9BRI30WXJwMEz"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DELETE Flight by Id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/flights/delete/flight_iuK3ROKr9BRI30WXJwMEz",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"flights",
+										"delete",
+										"flight_iuK3ROKr9BRI30WXJwMEz"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Mar 2024 16:19:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"flight_iuK3ROKr9BRI30WXJwMEz\",\n    \"origin\": \"Jakarta\",\n    \"destination\": \"London\",\n    \"departureTime\": \"2024-03-30 18:30\",\n    \"arrivalTime\": \"2024-03-31 05:15\",\n    \"totalSeats\": 100,\n    \"availableSeats\": 100,\n    \"price\": 2500000\n}"
+						}
+					]
+				},
+				{
+					"name": "PUT Flight by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTa3lCb29rIEFwcHMiLCJzdWIiOiJ1c2VyX0JYNDVCbGZRbDlBYWo5VDhjcWpnUCIsImV4cCI6MTcxMTc4MDc3OCwiaWF0IjoxNzExNzc3MTc4LCJyb2xlIjoiUk9MRV9BRE1JTiJ9.FWbPxuCWRbusNbbvt-qP_IqpCejFo7nDDaItdT2AxE8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n        \"id\": \"flight_s9Ssy452uL1yoYZ00j031\",\n        \"origin\": \"Jakarta\",\n        \"destination\": \"London\",\n        \"departureTime\": \"2024-03-31 18:30\",\n        \"arrivalTime\": \"2024-04-01 05:15\",\n        \"totalSeats\": 100,\n        \"availableSeats\": 100,\n        \"price\": 3000000.0\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/flights/update/flight_s9Ssy452uL1yoYZ00j031",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"flights",
+								"update",
+								"flight_s9Ssy452uL1yoYZ00j031"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "PUT Flight by Id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\n        \"id\": \"flight_s9Ssy452uL1yoYZ00j031\",\n        \"origin\": \"Jakarta\",\n        \"destination\": \"London\",\n        \"departureTime\": \"2024-03-31 18:30\",\n        \"arrivalTime\": \"2024-04-01 05:15\",\n        \"totalSeats\": 100,\n        \"availableSeats\": 100,\n        \"price\": 3000000.0\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/flights/update/flight_s9Ssy452uL1yoYZ00j031",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"flights",
+										"update",
+										"flight_s9Ssy452uL1yoYZ00j031"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Mar 2024 05:57:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"flight_s9Ssy452uL1yoYZ00j031\",\n    \"origin\": \"Jakarta\",\n    \"destination\": \"London\",\n    \"departureTime\": \"2024-03-31 18:30\",\n    \"arrivalTime\": \"2024-04-01 05:15\",\n    \"totalSeats\": 100,\n    \"availableSeats\": 100,\n    \"price\": 3000000\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "GET Booking by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTa3lCb29rIEFwcHMiLCJzdWIiOiJ1c2VyX2N1c3RvbWVyYzRzdVQ0R2JsM01kRHZTTVo3aE5nIiwiZXhwIjoxNzExNzMwMjA5LCJpYXQiOjE3MTE3MjY2MDksInJvbGUiOiJST0xFX0NVU1RPTUVSIn0.KH71RJKOw1ZDMTRw_W-ukvAmZunPk7bk7hLFlhrFtkE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/bookings/booking-2wi7Qcx-u0wO6EraBhXwS",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"bookings",
+								"booking-2wi7Qcx-u0wO6EraBhXwS"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET Booking by Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/bookings/booking-2wi7Qcx-u0wO6EraBhXwS",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"bookings",
+										"booking-2wi7Qcx-u0wO6EraBhXwS"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Mar 2024 16:16:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"bookingId\": \"booking-2wi7Qcx-u0wO6EraBhXwS\",\n    \"bookingDate\": \"2024-03-29T15:29:14.079+00:00\",\n    \"customerId\": \"customer-0D_TVi5JH-N93qxcRetlF\",\n    \"bookingDetail\": [\n        {\n            \"bookClass\": \"ECONOMY\",\n            \"trip\": \"ONE_WAY\",\n            \"flight\": [\n                {\n                    \"id\": \"flight_3euwQv5sOqHrS1_AzlxKJ\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "POST Booking Flight",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTa3lCb29rIEFwcHMiLCJzdWIiOiJ1c2VyX2N1c3RvbWVyYzRzdVQ0R2JsM01kRHZTTVo3aE5nIiwiZXhwIjoxNzExNzI5NzQ2LCJpYXQiOjE3MTE3MjYxNDYsInJvbGUiOiJST0xFX0NVU1RPTUVSIn0.x5k3S83eRrmNLIQqv-I1H9wtH94DSJHir_6iRQMQD3A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\":\"customer-0D_TVi5JH-N93qxcRetlF\",\n    \"bookingDetails\":[\n        {\n            \"bookClass\":\"ECONOMY\",\n            \"trip\": \"ONE_WAY\",\n            \"flight\":[\n                {\n                    \"id\":\"flight_3euwQv5sOqHrS1_AzlxKJ\"\n                }\n            ]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/bookings",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"bookings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST Booking Flight",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customerId\":\"customer-0D_TVi5JH-N93qxcRetlF\",\n    \"bookingDetails\":[\n        {\n            \"bookClass\":\"ECONOMY\",\n            \"trip\": \"ONE_WAY\",\n            \"flight\":[\n                {\n                    \"id\":\"flight_3euwQv5sOqHrS1_AzlxKJ\"\n                }\n            ]\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/bookings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"bookings"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Mar 2024 15:29:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"booking-2wi7Qcx-u0wO6EraBhXwS\",\n    \"bookingDate\": \"2024-03-29T15:29:14.079+00:00\",\n    \"customer\": {\n        \"id\": \"customer-0D_TVi5JH-N93qxcRetlF\",\n        \"firstName\": \"John\",\n        \"lastName\": \"Doe\",\n        \"dateOfBirth\": \"1997-11-01\",\n        \"phone\": \"0812344123\",\n        \"status\": null,\n        \"deleted\": false,\n        \"user\": {\n            \"id\": \"user_customerc4suT4Gbl3MdDvSMZ7hNg\",\n            \"email\": \"customer1@gmail.com\",\n            \"password\": \"$2a$10$k8gILBy0ohLyuaYvWgSuNOb2zfXGGZ2SETxiXSsJH.GiTmViPseeS\",\n            \"roles\": [\n                {\n                    \"id\": \"role-wfgWiaMGCBP9djryfZ0aO\",\n                    \"role\": \"ROLE_CUSTOMER\"\n                }\n            ]\n        }\n    },\n    \"purchaseDetail\": [\n        {\n            \"id\": \"booking_detail-4oqQL8dX64iOSi9jvqCoA\",\n            \"bookClass\": \"ECONOMY\",\n            \"trip\": \"ONE_WAY\",\n            \"flight\": {\n                \"id\": \"flight_3euwQv5sOqHrS1_AzlxKJ\",\n                \"origin\": \"Jakarta\",\n                \"destination\": \"Tokyo\",\n                \"departureTime\": \"2024-03-30 21:00\",\n                \"arrivalTime\": \"2024-03-31 06:25\",\n                \"totalSeats\": 100,\n                \"availableSeats\": 97,\n                \"price\": 2000000\n            }\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Get All Customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTa3lCb29rIEFwcHMiLCJzdWIiOiJ1c2VyX0JYNDVCbGZRbDlBYWo5VDhjcWpnUCIsImV4cCI6MTcxMTc4MDc3OCwiaWF0IjoxNzExNzc3MTc4LCJyb2xlIjoiUk9MRV9BRE1JTiJ9.FWbPxuCWRbusNbbvt-qP_IqpCejFo7nDDaItdT2AxE8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Customer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/customers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"customers"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 29 Mar 2024 16:16:37 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": \"customer-0D_TVi5JH-N93qxcRetlF\",\n                \"firstName\": \"John\",\n                \"lastName\": \"Doe\",\n                \"dateOfBirth\": \"1997-11-01\",\n                \"phone\": \"0812344123\",\n                \"status\": null,\n                \"deleted\": false,\n                \"user\": {\n                    \"id\": \"user_customerc4suT4Gbl3MdDvSMZ7hNg\",\n                    \"email\": \"customer1@gmail.com\",\n                    \"password\": \"$2a$10$k8gILBy0ohLyuaYvWgSuNOb2zfXGGZ2SETxiXSsJH.GiTmViPseeS\",\n                    \"roles\": [\n                        {\n                            \"id\": \"role-wfgWiaMGCBP9djryfZ0aO\",\n                            \"role\": \"ROLE_CUSTOMER\"\n                        }\n                    ]\n                }\n            }\n        ],\n        \"totalElement\": 1,\n        \"totalPages\": 1,\n        \"page\": 0,\n        \"size\": 5\n    },\n    \"message\": \"Successfully fetched data!\",\n    \"status\": 202\n}"
+						}
+					]
+				},
+				{
+					"name": "GET Customer by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTa3lCb29rIEFwcHMiLCJzdWIiOiJ1c2VyX0JYNDVCbGZRbDlBYWo5VDhjcWpnUCIsImV4cCI6MTcxMTc4MDc3OCwiaWF0IjoxNzExNzc3MTc4LCJyb2xlIjoiUk9MRV9BRE1JTiJ9.FWbPxuCWRbusNbbvt-qP_IqpCejFo7nDDaItdT2AxE8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/customers/customer-abLg0v8QNrKxIGLT2CTxr",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"customers",
+								"customer-abLg0v8QNrKxIGLT2CTxr"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET Customer by Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/customers/customer-abLg0v8QNrKxIGLT2CTxr",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"customers",
+										"customer-abLg0v8QNrKxIGLT2CTxr"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Mar 2024 05:43:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"customer-abLg0v8QNrKxIGLT2CTxr\",\n        \"firstName\": \"Jon\",\n        \"lastName\": \"Doe\",\n        \"dateOfBirth\": \"1997-11-01\",\n        \"phone\": \"0812344123\",\n        \"status\": null,\n        \"deleted\": false,\n        \"user\": {\n            \"id\": \"user_customerv5MsBwsJtVo6auZB_TbxT\",\n            \"email\": \"customer2@gmail.com\",\n            \"password\": \"$2a$10$W0/IalKdhuVoobndjkGbsu0eubhCxDiy6DPLNB3aju9PSOi/5ujpa\",\n            \"roles\": [\n                {\n                    \"id\": \"role-kWgSfa8Mc00BlbXbIcQaw\",\n                    \"role\": \"ROLE_CUSTOMER\"\n                }\n            ]\n        }\n    },\n    \"message\": \"Data successfully retrieved!\",\n    \"status\": 202\n}"
+						}
+					]
+				},
+				{
+					"name": "PUT Update Customer by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTa3lCb29rIEFwcHMiLCJzdWIiOiJ1c2VyX0JYNDVCbGZRbDlBYWo5VDhjcWpnUCIsImV4cCI6MTcxMTc4MDc3OCwiaWF0IjoxNzExNzc3MTc4LCJyb2xlIjoiUk9MRV9BRE1JTiJ9.FWbPxuCWRbusNbbvt-qP_IqpCejFo7nDDaItdT2AxE8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n                \"id\": \"customer-abLg0v8QNrKxIGLT2CTxr\",\n                \"firstName\": \"Jones\",\n                \"lastName\": \"Doe\",\n                \"dateOfBirth\": \"1997-11-01\",\n                \"phone\": \"0812344123\",\n                \"status\": null,\n                \"deleted\": false,\n                \"user\": {\n                    \"id\": \"user_customerv5MsBwsJtVo6auZB_TbxT\",\n                    \"email\": \"customer2@gmail.com\",\n                    \"password\": \"$2a$10$W0/IalKdhuVoobndjkGbsu0eubhCxDiy6DPLNB3aju9PSOi/5ujpa\",\n                    \"roles\": [\n                        {\n                            \"id\": \"role-kWgSfa8Mc00BlbXbIcQaw\",\n                            \"role\": \"ROLE_CUSTOMER\"\n                        }\n                    ]\n                }\n            }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/customers/update/customer-abLg0v8QNrKxIGLT2CTxr",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"customers",
+								"update",
+								"customer-abLg0v8QNrKxIGLT2CTxr"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "PUT Update Customer by Id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n                \"id\": \"customer-abLg0v8QNrKxIGLT2CTxr\",\n                \"firstName\": \"Jones\",\n                \"lastName\": \"Doe\",\n                \"dateOfBirth\": \"1997-11-01\",\n                \"phone\": \"0812344123\",\n                \"status\": null,\n                \"deleted\": false,\n                \"user\": {\n                    \"id\": \"user_customerv5MsBwsJtVo6auZB_TbxT\",\n                    \"email\": \"customer2@gmail.com\",\n                    \"password\": \"$2a$10$W0/IalKdhuVoobndjkGbsu0eubhCxDiy6DPLNB3aju9PSOi/5ujpa\",\n                    \"roles\": [\n                        {\n                            \"id\": \"role-kWgSfa8Mc00BlbXbIcQaw\",\n                            \"role\": \"ROLE_CUSTOMER\"\n                        }\n                    ]\n                }\n            }\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8083/api/customers/update/customer-abLg0v8QNrKxIGLT2CTxr",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"customers",
+										"update",
+										"customer-abLg0v8QNrKxIGLT2CTxr"
+									]
+								}
+							},
+							"status": "Accepted",
+							"code": 202,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Mar 2024 05:44:46 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"customer-abLg0v8QNrKxIGLT2CTxr\",\n        \"firstName\": \"Jones\",\n        \"lastName\": \"Doe\",\n        \"dateOfBirth\": \"1997-11-01\",\n        \"phone\": \"0812344123\",\n        \"status\": null,\n        \"deleted\": false,\n        \"user\": {\n            \"id\": \"user_customerv5MsBwsJtVo6auZB_TbxT\",\n            \"email\": \"customer2@gmail.com\",\n            \"password\": \"$2a$10$W0/IalKdhuVoobndjkGbsu0eubhCxDiy6DPLNB3aju9PSOi/5ujpa\",\n            \"roles\": [\n                {\n                    \"id\": \"role-kWgSfa8Mc00BlbXbIcQaw\",\n                    \"role\": \"ROLE_CUSTOMER\"\n                }\n            ]\n        }\n    },\n    \"message\": \"Data successfully updated!\",\n    \"status\": 202\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE Customer by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTa3lCb29rIEFwcHMiLCJzdWIiOiJ1c2VyX0JYNDVCbGZRbDlBYWo5VDhjcWpnUCIsImV4cCI6MTcxMTc4MDc3OCwiaWF0IjoxNzExNzc3MTc4LCJyb2xlIjoiUk9MRV9BRE1JTiJ9.FWbPxuCWRbusNbbvt-qP_IqpCejFo7nDDaItdT2AxE8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/api/customers/delete/customer-yQSnC36gbIchjimxkY9VO",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"customers",
+								"delete",
+								"customer-yQSnC36gbIchjimxkY9VO"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DELETE Customer by Id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8083/api/customers/delete/customer-yQSnC36gbIchjimxkY9VO",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8083",
+									"path": [
+										"api",
+										"customers",
+										"delete",
+										"customer-yQSnC36gbIchjimxkY9VO"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Mar 2024 05:40:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": null,\n    \"message\": \"Data successfully deleted!\",\n    \"status\": 200\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "POST USERS SIGN IN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"testauth1234@gmail.com\",\n    \"password\": \"tes123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/auth/users/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"auth",
+						"users",
+						"signin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST USERS SIGN IN",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"testauth1234@gmail.com\",\n    \"password\": \"tes123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/auth/users/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"auth",
+								"users",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 29 Mar 2024 09:51:00 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Data successfully created!\",\n    \"data\": {\n        \"email\": \"testauth1234@gmail.com\",\n        \"roles\": \"ROLE_ADMIN\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTa3lCb29rIEFwcHMiLCJzdWIiOiJ1c2VyX0w4WnlOTUVPYnlmME5COTBvY2VBTyIsImV4cCI6MTcxMTcwOTQ2MCwiaWF0IjoxNzExNzA1ODYwLCJyb2xlIjoiUk9MRV9BRE1JTiJ9.g8EjgG_UzcPSH1Il0TcmKDA03BG4dmpOr4ZbgdnjDkM\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "POST USERS ADMIN SIGNUP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"testauth1234@gmail.com\",\n    \"password\": \"tes123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/auth/users/admin/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"auth",
+						"users",
+						"admin",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST USERS ADMIN SIGNUP",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"testauth1234@gmail.com\",\n    \"password\": \"tes123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/auth/users/admin/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"auth",
+								"users",
+								"admin",
+								"signup"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 29 Mar 2024 09:50:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 201,\n    \"message\": \"Data successfully created!\",\n    \"data\": {\n        \"email\": \"testauth1234@gmail.com\",\n        \"roles\": \"ROLE_ADMIN\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "POST USERS CUSTOMER SIGNUP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"customer2@gmail.com\",\n  \"password\": \"string\",\n  \"firstName\": \"Jon\",\n  \"lastName\": \"Doe\",\n  \"phone\" : \"0812344123\",\n  \"dateOfBirth\" : \"1997-11-01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/auth/users/customers/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"auth",
+						"users",
+						"customers",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST USERS CUSTOMER SIGNUP",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"customer1@gmail.com\",\n  \"password\": \"string\",\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"phone\" : \"0812344123\",\n  \"dateOfBirth\" : \"1997-11-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/auth/users/customers/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"auth",
+								"users",
+								"customers",
+								"signup"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 29 Mar 2024 16:28:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 201,\n    \"message\": \"Data successfully created!\",\n    \"data\": {\n        \"email\": \"customer1@gmail.com\",\n        \"role\": \"ROLE_CUSTOMER\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "POST USERS CUSTOMER SIGNIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"customer1@gmail.com\",\n    \"password\": \"string\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/api/auth/users/signin",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"api",
+						"auth",
+						"users",
+						"signin"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST USERS CUSTOMER SIGNIN",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"customer1@gmail.com\",\n    \"password\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8083/api/auth/users/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"api",
+								"auth",
+								"users",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 29 Mar 2024 16:25:30 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 200,\n    \"message\": \"Data successfully created!\",\n    \"data\": {\n        \"email\": \"customer1@gmail.com\",\n        \"roles\": \"ROLE_CUSTOMER\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJTa3lCb29rIEFwcHMiLCJzdWIiOiJ1c2VyX2N1c3RvbWVyYzRzdVQ0R2JsM01kRHZTTVo3aE5nIiwiZXhwIjoxNzExNzMzMTMwLCJpYXQiOjE3MTE3Mjk1MzAsInJvbGUiOiJST0xFX0NVU1RPTUVSIn0.n0TNIQ5xlLvQyl00lX5PWd8iWYY2VxZLuuFZ9w8T6Pc\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
